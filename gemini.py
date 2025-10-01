@@ -12,7 +12,7 @@ OUT_CSV  = "soundcloud_trending.csv"
 html = requests.get(URL, timeout=20).text
 
 # 2) Configure Gemini
-genai.configure(api_key="AIzaSyBN6uBAavXYp_B2wAV_TQtekvpsORPo1ow")
+genai.configure(api_key= os.getenv("GOOGLE_API_KEY"))
 model = genai.GenerativeModel(
     model_name="gemini-2.5-flash",
     generation_config={"response_mime_type": "application/json"}  # force JSON back
